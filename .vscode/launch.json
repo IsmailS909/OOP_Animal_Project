@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "my_OOP_Code.Main",
+            "projectName": "usercode_28b51d67"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "usercode_28b51d67"
+        },
+        {
+            "type": "java",
+            "request": "launch",
+            "vmArgs": "--module-path /usr/lib/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml"
+        }
+    ]
+}
