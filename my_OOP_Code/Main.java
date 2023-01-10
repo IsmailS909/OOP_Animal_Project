@@ -35,7 +35,10 @@ return 0;
 }
 
 public static int[] moveAndPowerSelect(){
-    return [3,3,2,34];
+
+    
+    return null;
+    
     
 
 }

@@ -2,7 +2,12 @@ package my_OOP_Code.Powers;
 
 public class Eightmoves extends ThreeSpecialMoves{
 
-    public Eightmoves(){}
+    
+
+    public Eightmoves(int[] eachMoveUpgrades) {
+        super(eachMoveUpgrades);
+        //TODO Auto-generated constructor stub
+    }
 
     public int Strike(){ // each method should be cutomized based on how the user upgrades it, how many rounds have passed
 return 40;
