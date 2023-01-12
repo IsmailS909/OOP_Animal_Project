@@ -15,7 +15,7 @@ Water, earth or sand environments
 
 Classes details:
 
-5 character classes, all inherit the abilities class, which inherits the special abilities lass, which inherits the environment class which inherits the (level up each round) class.
+5 character classes, all inherit the abilities class, which inherits the special abilities lass, which inherits the environment class
 
 
 

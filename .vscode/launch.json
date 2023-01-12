@@ -5,6 +5,13 @@
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "my_OOP_Code.Main",
+            "projectName": "OOP_Animal_Project_41918cfd"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "my_OOP_Code.Main",
             "projectName": "usercode_28b51d67"
         },
         {
