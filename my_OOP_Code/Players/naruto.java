@@ -3,8 +3,8 @@ import my_OOP_Code.Powers.Eightmoves;
 
 public class naruto extends Eightmoves{
 
-    public naruto(int[] eachMoveUpgrades) {
-        super(eachMoveUpgrades);
+    public naruto(int []upgradesArray, int envirmomentChosen) {
+        super(upgradesArray, envirmomentChosen);            //TODO Auto-generated constructor stub
         
     }
     public String toString(){

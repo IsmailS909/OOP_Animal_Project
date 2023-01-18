@@ -1,11 +1,13 @@
 package my_OOP_Code.Powers;
 
-public class ThreeSpecialMoves extends MovesLevelUp{
+public class ThreeSpecialMoves extends Enviroment{
     
 
 
-    public ThreeSpecialMoves(int[] eachMoveUpgrades) {
-        super(eachMoveUpgrades);
+   
+    public ThreeSpecialMoves(int[] upgradesArray, int envirmomentChosen) {
+        super(upgradesArray, envirmomentChosen );
+        //TODO Auto-generated constructor stub
     }
     public int rasengan(){ 
         return 10;

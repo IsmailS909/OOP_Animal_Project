@@ -93,11 +93,11 @@ public static void computerPlaying(){
     public static void main(String[] args) {
         
         int[] array = {3,5,3,3,45,4};
-        Gaara player1 = new Gaara(array); 
-        Kisame player2 = new Kisame(array); 
-        naruto player3 = new naruto(array); 
-        sakura player4 = new sakura(array); 
-        Sauske player5 = new Sauske(array); 
+        Gaara player1 = new Gaara(array, 1); 
+        Kisame player2 = new Kisame(array, 1); 
+        naruto player3 = new naruto(array, 1); 
+        sakura player4 = new sakura(array, 1); 
+        Sauske player5 = new Sauske(array, 1); 
 
         int healthUser = 1000;
         int healthcomputer = 1000;
@@ -105,7 +105,8 @@ public static void computerPlaying(){
         
         moveSelect(player1, player2, player3, player4, player5);
 
-
+healthUser = player1.Strike(2);
+System.out.println(healthUser);
 
 
 }
