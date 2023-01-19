@@ -23,4 +23,7 @@ Classes details:
 What you should see while playing the game:
 Your characters health, current stamina, moves it can do, as well as the opent’s health. Any move done should be displayed as well as the numbers accocated with it
 
+ideas:
 
+make special items -
+more starting health, more max stamina, different items that help you
