@@ -6,6 +6,7 @@ public class Eightmoves extends ThreeSpecialMoves{
     public int _envirmomentChosen;
     public int health;
     
+    
 
     public Eightmoves(int[] upgradesArray, int envirmomentChosen) {
        
@@ -16,13 +17,12 @@ public class Eightmoves extends ThreeSpecialMoves{
       
     }
 
-    public int Strike(int roundsPlayed){ // each method should be cutomized based on how the user upgrades it, how many rounds have passed
-int upgradesToStrike = this._upgradesArray[0];
-int strikeAmount = 2;
-if(upgradesToStrike > 4 ){
-    strikeAmount = 1;
-    }
-    return (15 * upgradesToStrike * strikeAmount) + (30 * roundsPlayed);
+    public int Strike(){ // 
+        if(stamina < 10){
+            return 0;
+        }
+        stamina=+ 10; 
+return _upgradesArray[0] * 20;
 
 }
     public int block(){

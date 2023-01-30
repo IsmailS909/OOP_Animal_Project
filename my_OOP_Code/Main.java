@@ -1,20 +1,14 @@
 package my_OOP_Code;
 import java.util.Scanner;
 
-import my_OOP_Code.Players.Gaara;
-import my_OOP_Code.Players.Kisame;
-import my_OOP_Code.Players.Sauske;
-import my_OOP_Code.Players.naruto;
-import my_OOP_Code.Players.sakura;
 
 
 public class Main {
-
+   public static Scanner myObj = new Scanner(System.in);
      
 
 public static int greeting(){
     String userInput;
-    Scanner myObj = new Scanner(System.in);
     System.out.println("welcome to the Naruto fighiting game");
     System.out.println("You can select from these 5 charaters");
     System.out.println("naruto, sauske, sakura, kisame, gaara");
@@ -26,26 +20,24 @@ public static int greeting(){
     if(userInput.equals("sauske")){
         return 2;
     }
-    if(userInput.equals("sakura")){
+    if(userInput.equals("kisame")){
         return 3;
     }
-    if(userInput.equals("kisame")){
-        return 4;
-    }
     if(userInput.equals("gaara")){
-        return 5;
+        return 4;
     }
 return 0;
 }
 
-public static int[] moveSelect(Gaara player1, Kisame player2, naruto player3, sakura player4, Sauske player5 ){ 
-    System.out.println("your character can have these moves ");
+/*
+public static int specialMoveSelect(Gaara player1, Kisame player2, naruto player3, sakura player4, Sauske player5 ){ 
+    System.out.println("your character can have these moves special moves");
     int characterName = greeting();
-    /* Gaara player01 = new Gaara(array); 
+     Gaara player01 = new Gaara(array); 
         Kisame player02 = new Kisame(array); 
         naruto player03 = new naruto(array); 
         sakura player04 = new sakura(array); 
-        Sauske player05 = new Sauske(array); */
+        Sauske player05 = new Sauske(array); 
     if(characterName == 1){
 player1.toString();
     }if(characterName == 2){
@@ -57,13 +49,17 @@ player1.toString();
     }if(characterName == 5){
         player5.toString();
     }
-    System.out.println("type 1,2,3 etc depeding on which special moves you want, remember you can only hava 3, having less gives you powerup points");
-
-
-    return null;
+    System.out.println("from the 3 optional special moves, whcih one do you want");
+int userInput = myObj.nextInt();
+    while(true){
+    if(userInput <= 3 || userInput > 0){
+        break;
+    }
+    
+    }
+    return myObj.nextInt();
     
     
-
 }
 public static int[] PowerSelect(){ 
     //this method will allow you to select the 3 special moves
@@ -79,6 +75,8 @@ public static int[] PowerSelect(){
     
 
 }
+*/
+
 
 public static void userPlaying(){
 // the goal will be to be able to create an instance of a class
@@ -90,24 +88,51 @@ public static void userPlaying(){
 public static void computerPlaying(){
     
 }
-    public static void main(String[] args) {
+    
         
-        int[] array = {3,5,3,3,45,4};
-        Gaara player1 = new Gaara(array, 1); 
-        Kisame player2 = new Kisame(array, 1); 
-        naruto player3 = new naruto(array, 1); 
-        sakura player4 = new sakura(array, 1); 
-        Sauske player5 = new Sauske(array, 1); 
-
-        int healthUser = 1000;
-        int healthcomputer = 1000;
-        int userCharacter = greeting();
         
-        moveSelect(player1, player2, player3, player4, player5);
 
-healthUser = player1.Strike(2);
-System.out.println(healthUser);
+       //// int healthUser = 1000;
+        //int healthcomputer = 1000;
+       // int userCharacter = greeting();
+        
+      //  int s = specialMoveSelect(player1, player2, player3, player4, player5);
 
+//healthUser = player1.Strike(2);
+//System.out.println(healthUser);
+
+// how the game will work,
+
+/*
+ * user will select character using 1,2,3,4,5, on screen using javadraw
+ * a quick toString method will tell you its backsotry it's moves and special moves, then 8 input numbers for upgrades
+ * game will tell user the rules
+ * their will be 3 preset coputer characters each facing of in a different enviroment
+ * user will have to use 1 character the whole time, as time goes on, user can upgrade duing after each battle
+ * lose start again
+ * 
+ * 
+ * gameplay:
+ * 
+ * 
+ * 
+ */
+public static void main(String[] args) {
+
+int userHealth = 1000;
+int computerHealth =1000;
+int[] array1 = {1,2,3,4,5};
+
+Scanner myObj = new Scanner(System.in);  
+
+greeting();
+ while(userHealth > 0 && computerHealth > 0){
+System.out.println("type the move you want to do 1- 7 ");
+int userInput = myObj.nextInt();  
+
+
+ }
+ 
 
 }
 

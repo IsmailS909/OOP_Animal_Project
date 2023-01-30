@@ -2,7 +2,7 @@ package my_OOP_Code.Players;
 
 import my_OOP_Code.Powers.Eightmoves;
 
-public class Gaara extends Eightmoves{
+public interface Gaara extends allCharacter{
 
     public Gaara(int []upgradesArray, int envirmomentChosen) {
         super(upgradesArray, envirmomentChosen);            //TODO Auto-generated constructor stub
@@ -12,3 +12,4 @@ public class Gaara extends Eightmoves{
     }
     
 }
+//inherticance will be done with 5 chracter classes
