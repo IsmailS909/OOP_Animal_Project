@@ -2,60 +2,47 @@ package my_OOP_Code.Powers;
 
 public class Eightmoves extends ThreeSpecialMoves{
 
-    public int[] _upgradesArray;
-    public int _envirmomentChosen;
-    public int health;
+    public int otherHealth; 
     
+    // every method should take in 
+
+    public void setotherHealth(int _otherHealth){
+        this.otherHealth = _otherHealth;
+
+    }
+    public int getOtherHealth(){
+        return this.otherHealth;
+    }
+
+    public Eightmoves(int _health, int _stamina, int []_upgrades) {
+        super(_health, _stamina, _upgrades);
+        //TODO Auto-generated constructor stub
+    }
     
-
-    public Eightmoves(int[] upgradesArray, int envirmomentChosen) {
-       
-        super(upgradesArray, envirmomentChosen);           
-        this._upgradesArray = upgradesArray;
+    public int shadowClone(){ // this attack will return the number of attacks it will blocks from oponent, takes in account upgrades and amount of stamina decreased will depend on upgrades
+        //this can be used by anyone
+       if(this.stamina > 10){
+        this.stamina = this.stamina - 4;
+this.health = this.health - 20;
+       }
+       return 0;
+        }       
+    
+ 
+   
         
-        this._envirmomentChosen = envirmomentChosen;
-      
+    public void heal(){
+        this.otherHealth=this.otherHealth+ upgrades[4]* 20 + 30;
     }
 
-    public int Strike(){ // 
-        if(stamina < 10){
-            return 0;
-        }
-        stamina=+ 10; 
-return _upgradesArray[0] * 20;
-
-}
-    public int block(){
-        int block = 40;
-        if(this._upgradesArray[1] > 3){
-            block = 20;
-        }
-            
-             int blockAmount =  this._upgradesArray[1] * block;
-        
-        return blockAmount; 
+    public void knifeThrow(int roundsPlayed){
+        this.health =this.health- 40 + roundsPlayed * 5;
     }
 
-    public int heal(){
-        return 50 * this._upgradesArray[2];
-    }
-
-    public int knifeThrow(){
-        return 15 * this._upgradesArray[3] ;
-    }
-
-    public int staminaBuild(){
-        int staminaAmount = 5;
-        if(this._upgradesArray[3] > 3){
-            staminaAmount = 3;
-        }
-this.health = staminaAmount * this._upgradesArray[3] * 20;
-        return staminaAmount * this._upgradesArray[3];
+    public void staminaBuild(){
+        this.stamina =this.stamina+ 5;
 
     }
-    public int GethealthChange(){
-return this.health;
-    }
-
+  
         
 }

@@ -1,17 +1,20 @@
 package my_OOP_Code;
 import java.util.Scanner;
 
+import my_OOP_Code.Powers.Player;
+
 
 
 public class Main {
+
    public static Scanner myObj = new Scanner(System.in);
      
 
 public static int greeting(){
     String userInput;
     System.out.println("welcome to the Naruto fighiting game");
-    System.out.println("You can select from these 5 charaters");
-    System.out.println("naruto, sauske, sakura, kisame, gaara");
+    System.out.println("You can select from these 3 charaters");
+    System.out.println("naruto, sauske, kisame");
     System.out.println("Type the character you want to select");
    userInput = myObj.nextLine();
     if(userInput.equals("naruto")){
@@ -23,114 +26,144 @@ public static int greeting(){
     if(userInput.equals("kisame")){
         return 3;
     }
-    if(userInput.equals("gaara")){
-        return 4;
-    }
+
 return 0;
 }
 
-/*
-public static int specialMoveSelect(Gaara player1, Kisame player2, naruto player3, sakura player4, Sauske player5 ){ 
-    System.out.println("your character can have these moves special moves");
-    int characterName = greeting();
-     Gaara player01 = new Gaara(array); 
-        Kisame player02 = new Kisame(array); 
-        naruto player03 = new naruto(array); 
-        sakura player04 = new sakura(array); 
-        Sauske player05 = new Sauske(array); 
-    if(characterName == 1){
-player1.toString();
-    }if(characterName == 2){
-        player2.toString();
-    }if(characterName == 3){
-        player3.toString();
-    }if(characterName == 4){
-        player4.toString();
-    }if(characterName == 5){
-        player5.toString();
+public static int[] userUpgrades(){
+    int[] userUpgrades = new int[5];
+
+    for(int i = 0; i < 5; i++){
+        System.out.println("you have 10 total upgres types 5 numbers to decide which move get's how many upgrarades");
+    userUpgrades[i] = myObj.nextInt();
     }
-    System.out.println("from the 3 optional special moves, whcih one do you want");
-int userInput = myObj.nextInt();
-    while(true){
-    if(userInput <= 3 || userInput > 0){
-        break;
-    }
-    
-    }
-    return myObj.nextInt();
-    
-    
+    return userUpgrades;
 }
-public static int[] PowerSelect(){ 
-    //this method will allow you to select the 3 special moves
-    // this method gives you 10 upgrades
-    //you can upgrade moves for 1 and special moves for 2
-    // every round you play will automatically give you 3 upgrades
-
-    System.out.println("here are all the moves you can do ");
-    System.out.println("type in the upgrade amount for all your moves, remember you only have 12 upgrades");
-
-    return null;
-    
-    
-
-}
-*/
 
 
-public static void userPlaying(){
-// the goal will be to be able to create an instance of a class
-        //naruto userPlayer = new naruto(array of power ups)
-        // then in a depending on which powers use picks, those powers will be in a loop
-
-
-}
-public static void computerPlaying(){
-    
-}
-    
-        
-        
-
-       //// int healthUser = 1000;
-        //int healthcomputer = 1000;
-       // int userCharacter = greeting();
-        
-      //  int s = specialMoveSelect(player1, player2, player3, player4, player5);
-
-//healthUser = player1.Strike(2);
-//System.out.println(healthUser);
-
-// how the game will work,
-
-/*
- * user will select character using 1,2,3,4,5, on screen using javadraw
- * a quick toString method will tell you its backsotry it's moves and special moves, then 8 input numbers for upgrades
- * game will tell user the rules
- * their will be 3 preset coputer characters each facing of in a different enviroment
- * user will have to use 1 character the whole time, as time goes on, user can upgrade duing after each battle
- * lose start again
- * 
- * 
- * gameplay:
- * 
- * 
- * 
- */
 public static void main(String[] args) {
 
-int userHealth = 1000;
-int computerHealth =1000;
-int[] array1 = {1,2,3,4,5};
+int userHealth= 1000;
+int computerHealth = 1100; 
+int computerPlayerChosen = 1;
+int userStamina = 40;
+int computerStamina = 40;
+int computerArray[] = {2,3,2,4,1};
+int roundPlayed = 1; 
+int enviroment = 1;
+int playerChosen = greeting();
+Player user = new Player(1000, 50, userUpgrades());
+Player computer = new Player(1100, 50,computerArray);
 
-Scanner myObj = new Scanner(System.in);  
-
-greeting();
  while(userHealth > 0 && computerHealth > 0){
-System.out.println("type the move you want to do 1- 7 ");
+    
+System.out.println("type the move you want to do 1- 5 ");
 int userInput = myObj.nextInt();  
 
+if(userInput == 0 && playerChosen == 1){
+user.rasengan(enviroment, roundPlayed);
 
+}
+if(userInput == 1 && playerChosen == 1){
+user.nineTailsStamina();
+}
+
+if(userInput == 0 && playerChosen == 2){
+
+    user.waterPrisonShark();
+}
+if(userInput == 1 && playerChosen == 2){
+    user.waterBall(enviroment);
+}
+
+if(userInput == 0 && playerChosen == 3){
+int num = myObj.nextInt(); 
+user.amaterasu(num);
+}
+if(userInput == 1 && playerChosen == 3){
+    user.dimensioncreation(); 
+}
+
+if(userInput == 2){
+user.heal();
+}
+if(userInput == 3){
+    user.knifeThrow(roundPlayed);
+}
+if(userInput == 4){
+    user.staminaBuild();
+}
+
+
+
+//userHealth = user.getOtherHealth();
+
+//computerHealth = computer.getOtherHealth();
+
+
+
+
+computerStamina = user.getHealth();
+userStamina = user.getStamina();
+
+System.out.println(userHealth);
+System.out.println(userStamina);
+
+
+int computerInput = (int)Math.floor(Math.random() * (5 - 1 + 1) + 1);
+
+
+
+
+
+if(computerInput == 0 && computerPlayerChosen == 1){
+    computer.rasengan(enviroment, roundPlayed);
+    
+    }
+    if(computerInput == 1 && computerPlayerChosen == 1){
+        computer.nineTailsStamina();
+    }
+    
+    if(computerInput == 0 && computerPlayerChosen == 2){
+    
+        computer.waterPrisonShark();
+    }
+    if(computerInput == 1 && computerPlayerChosen == 2){
+        computer.waterBall(enviroment);
+    }
+    
+    if(computerInput == 0 && computerPlayerChosen == 3){
+    int num = myObj.nextInt(); 
+    computer.amaterasu(num);
+    }
+    if(computerInput == 1 && computerPlayerChosen == 3){
+        computer.dimensioncreation(); 
+    }
+    
+    if(computerInput == 2){
+        computer.heal();
+    }
+    if(computerInput == 3){
+        computer.knifeThrow(roundPlayed);
+    }
+    if(computerInput == 4){
+        computer.staminaBuild();
+    }
+    
+    
+  //  userHealth = user.getOtherHealth();
+    
+  //  computerHealth = computer.getOtherHealth();
+    
+    
+
+userHealth = user.getHealth();
+computerStamina = user.getStamina();
+
+    System.out.println(computerHealth);
+System.out.println(computerStamina);
+    
+//use an item parent class and item subclass to show abstraction
  }
  
 

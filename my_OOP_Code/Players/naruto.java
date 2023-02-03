@@ -1,15 +1,10 @@
 package my_OOP_Code.Players;
 import my_OOP_Code.Powers.Eightmoves;
 
-public interface naruto extends allCharacter{
+public interface naruto {
 
-    public naruto(int []upgradesArray, int envirmomentChosen) {
-        super(upgradesArray, envirmomentChosen);            //TODO Auto-generated constructor stub
-        
-    }
-    public String toString(){
-        return "THese are my special powers: sandArmour and quicksand";
-    }
+    public int rasengan(int _enviroment, int roundsPlayed);
+    public int nineTailsStamina();
     
 
     }
