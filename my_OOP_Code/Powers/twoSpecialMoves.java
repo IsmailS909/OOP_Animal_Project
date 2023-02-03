@@ -6,21 +6,20 @@ import my_OOP_Code.Players.Kisame;
 import my_OOP_Code.Players.Sauske;
 import my_OOP_Code.Players.naruto;
 
-public class ThreeSpecialMoves implements  Kisame, naruto, Sauske{
+public class twoSpecialMoves implements  Kisame, naruto, Sauske{
     
 
  
-    public int otherHealth; 
-    public int stamina;
-public ArrayList<Integer> roundsStaminaIncrease = new ArrayList<Integer>(); // 
-public ArrayList<Integer> futureRoundsAttack = new ArrayList<Integer>(); //
-public int health; 
-public int roundPlayed;
-public int []upgrades;
+    private int otherHealth; 
+    protected int stamina;
+    private ArrayList<Integer> roundsStaminaIncrease = new ArrayList<Integer>(); // 
+    private ArrayList<Integer> futureRoundsAttack = new ArrayList<Integer>(); //
+protected int health; 
+protected int []upgrades;
 // dont add more, just make the moves simpler
 
 // every method should take in parameters, enviroment, health, stamina, nextAttackReduce;,roundsStaminaIncrease;,futureRoundsAttack;
-public ThreeSpecialMoves(int _health, int _stamina, int []_upgrades){
+public twoSpecialMoves(int _health, int _stamina, int []_upgrades){
     this. health = _health;
     this. stamina = _stamina;
     this .upgrades = _upgrades;
@@ -67,12 +66,13 @@ public ThreeSpecialMoves(int _health, int _stamina, int []_upgrades){
 
 
    public int rasengan(int _enviroment, int roundsPlayed){  //this will just do damage
-    int enviromentBoost = 1;
+    int enviromentBoost = 0;
     if(_enviroment == 1){
-    enviromentBoost = 2;
+    enviromentBoost = 1;
     }
 if(this.stamina > 10){
-    this.health = health- 100 + 50 * upgrades[0] + roundsPlayed * 10;
+    this.stamina = this.stamina - 10;
+    this.health = this.health - (100 + (50 * upgrades[0]) + (roundsPlayed * 10) + (enviromentBoost * 20));
 }
 return 0;
    }
@@ -83,7 +83,7 @@ return 0;
        for(int i = 0; i > this.upgrades[1] + 1; i++){
         this.roundsStaminaIncrease.add(2);
        }
-       health =- 70;
+       this.health = this.health - 70;
    
    return 1;
     }

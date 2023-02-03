@@ -1,7 +1,14 @@
 package my_OOP_Code.items;
 
 public class itemSpawner extends item{
-    // make the body add polymormism herer
+
+    public int staminaFruit() {
+        return 0;
+    }
+
+    public int healFruit() {
+        return 0;
+    }
     
 
 }

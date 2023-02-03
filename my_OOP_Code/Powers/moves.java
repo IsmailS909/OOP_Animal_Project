@@ -1,8 +1,8 @@
 package my_OOP_Code.Powers;
 
-public class Eightmoves extends ThreeSpecialMoves{
+public class moves extends twoSpecialMoves{
 
-    public int otherHealth; 
+    private int otherHealth; 
     
     // every method should take in 
 
@@ -14,7 +14,7 @@ public class Eightmoves extends ThreeSpecialMoves{
         return this.otherHealth;
     }
 
-    public Eightmoves(int _health, int _stamina, int []_upgrades) {
+    public moves(int _health, int _stamina, int []_upgrades) {
         super(_health, _stamina, _upgrades);
         //TODO Auto-generated constructor stub
     }

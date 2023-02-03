@@ -1,7 +1,9 @@
 package my_OOP_Code;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import my_OOP_Code.Powers.Player;
+import my_OOP_Code.items.itemSpawner;
 
 
 
@@ -54,10 +56,22 @@ int enviroment = 1;
 int playerChosen = greeting();
 Player user = new Player(1000, 50, userUpgrades());
 Player computer = new Player(1100, 50,computerArray);
+ArrayList<Integer> _computerRoundsStaminaIncrease = new ArrayList<Integer>();
+ArrayList<Integer> _UserroundsStaminaIncrease = new ArrayList<Integer>();
+
+ ArrayList<Integer> _futureRoundsAttack = new ArrayList<Integer>(); 
+
+ itemSpawner game = new itemSpawner();
+
+
+
 
  while(userHealth > 0 && computerHealth > 0){
-    
-System.out.println("type the move you want to do 1- 5 ");
+
+    System.out.println("yours health is " + userHealth);
+System.out.println("your stamina is "+userStamina);
+
+System.out.println("type the move you want to do 1 - 5 ");
 int userInput = myObj.nextInt();  
 
 if(userInput == 0 && playerChosen == 1){
@@ -94,6 +108,15 @@ if(userInput == 4){
     user.staminaBuild();
 }
 
+_UserroundsStaminaIncrease = user.GetRoundsStaminaIncrease();
+
+/*if(_UserroundsStaminaIncrease.get(0) == 2){
+userStamina = userStamina + (2 * 10);
+_UserroundsStaminaIncrease.remove(0);
+user.setRoundsStaminaIncrease(_UserroundsStaminaIncrease);
+}
+*/
+userStamina = userStamina + 10;
 
 
 //userHealth = user.getOtherHealth();
@@ -103,16 +126,16 @@ if(userInput == 4){
 
 
 
-computerStamina = user.getHealth();
+computerHealth = user.getHealth();
 userStamina = user.getStamina();
 
-System.out.println(userHealth);
-System.out.println(userStamina);
+System.out.println("the computer's health is "+computerHealth);
+System.out.println("the computer's stamina is "+computerStamina);
+
+
 
 
 int computerInput = (int)Math.floor(Math.random() * (5 - 1 + 1) + 1);
-
-
 
 
 
@@ -150,22 +173,31 @@ if(computerInput == 0 && computerPlayerChosen == 1){
         computer.staminaBuild();
     }
     
-    
+    _computerRoundsStaminaIncrease = computer.GetRoundsStaminaIncrease();
+/* 
+if(_computerRoundsStaminaIncrease.get(0) == 2){
+computerStamina = computerStamina + (2 * 10);
+_computerRoundsStaminaIncrease.remove(0);
+user.setRoundsStaminaIncrease(_computerRoundsStaminaIncrease);
+}
+*/
+computerStamina = computerStamina + 10;
+
   //  userHealth = user.getOtherHealth();
     
   //  computerHealth = computer.getOtherHealth();
     
     
 
-userHealth = user.getHealth();
-computerStamina = user.getStamina();
+computerStamina = computer.getStamina();
+userHealth = computer.getHealth();
 
-    System.out.println(computerHealth);
-System.out.println(computerStamina);
+    
     
 //use an item parent class and item subclass to show abstraction
  }
- 
+
+ System.out.println("the game is finished");
 
 }
 
