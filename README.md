@@ -1,29 +1,3 @@
 # OOP_Animal_Project
 
-Plan:
-
-5 characters you can go against all controlled by the computer
-5 characters you can chose from
-5 characters can become better by gianing abilities, special abilities and increasing power of each ability
-Becoming better is possible with
- Change in environment
-Which special abilties you chose to give 
-How much you upgrade each ability or by playing rounds
-There is stamina in the game
-To lose, you will have to lose all your health
-Water, earth or sand environments
-
-Classes details:
-
-5 character classes, all inherit the abilities class, which inherits the special abilities lass, which inherits the environment class
-
-
-
-
-What you should see while playing the game:
-Your characters health, current stamina, moves it can do, as well as the opent’s health. Any move done should be displayed as well as the numbers accocated with it
-
-ideas:
-
-make special items -
-more starting health, more max stamina, different items that help you
+// There are 3 characters that share 3 powers and have 2 indivisual special powers. The common powers are in one class and the others are in another class. The way I made the methods allows me to just call them and stamina, health and other variables are automatically changed. Currently the enviroment chosen and rounds played effect the strenght of the moves. The player can select a character and can upgrade each move depending on how each move is upgraded. You can currently against the pre selected computer playerwith the pre selected environment. 

@@ -1,44 +1,42 @@
 package my_OOP_Code.Powers;
 
+//this class holds methods that are moves that all characters have
 public class moves extends twoSpecialMoves{
 
-    private int otherHealth; 
+    private int ThisPlayersHealth; 
     
-    // every method should take in 
-
-    public void setotherHealth(int _otherHealth){
-        this.otherHealth = _otherHealth;
+//setter method 
+    public void setThisPlayersHealth(int _ThisPlayersHealth){
+        this.ThisPlayersHealth = _ThisPlayersHealth;
 
     }
-    public int getOtherHealth(){
-        return this.otherHealth;
+    //getter method 
+    public int getThisPlayersHealth(){
+        return this.ThisPlayersHealth;
     }
-
+// constructer
     public moves(int _health, int _stamina, int []_upgrades) {
         super(_health, _stamina, _upgrades);
-        //TODO Auto-generated constructor stub
     }
-    
-    public int shadowClone(){ // this attack will return the number of attacks it will blocks from oponent, takes in account upgrades and amount of stamina decreased will depend on upgrades
-        //this can be used by anyone
+    //this move will check if the player has enough stamina and reduce the other player's health and this player's stamina
+    public int shadowClone(){ 
        if(this.stamina > 10){
         this.stamina = this.stamina - 4;
 this.health = this.health - 20;
        }
        return 0;
         }       
-    
- 
-   
-        
+
+        // this move will allow you to heal 
     public void heal(){
-        this.otherHealth=this.otherHealth+ upgrades[4]* 20 + 30;
+        this.ThisPlayersHealth=this.ThisPlayersHealth+ upgrades[4]* 20 + 30;
     }
 
+    //this method allows you do do an attack without any stamina
     public void knifeThrow(int roundsPlayed){
         this.health =this.health- 40 + roundsPlayed * 5;
     }
-
+//this method allows you to gain stamina
     public void staminaBuild(){
         this.stamina =this.stamina+ 5;
 

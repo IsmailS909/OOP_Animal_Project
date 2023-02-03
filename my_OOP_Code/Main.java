@@ -1,7 +1,6 @@
 package my_OOP_Code;
 import java.util.ArrayList;
 import java.util.Scanner;
-
 import my_OOP_Code.Powers.Player;
 import my_OOP_Code.items.itemSpawner;
 
@@ -11,7 +10,7 @@ public class Main {
 
    public static Scanner myObj = new Scanner(System.in);
      
-
+// this method let's you pick you're chararacter
 public static int greeting(){
     String userInput;
     System.out.println("welcome to the Naruto fighiting game");
@@ -32,11 +31,12 @@ public static int greeting(){
 return 0;
 }
 
+//this method let's you decide how you want to upgrade your 5 moves
 public static int[] userUpgrades(){
     int[] userUpgrades = new int[5];
 
     for(int i = 0; i < 5; i++){
-        System.out.println("you have 10 total upgres types 5 numbers to decide which move get's how many upgrarades");
+        System.out.println("you have 10 total upgrades, enter 5 numbers to decide which move get's how many upgrarades, make sure they add to less than 10");
     userUpgrades[i] = myObj.nextInt();
     }
     return userUpgrades;
@@ -54,8 +54,11 @@ int computerArray[] = {2,3,2,4,1};
 int roundPlayed = 1; 
 int enviroment = 1;
 int playerChosen = greeting();
+
+// 2 objects are created, one for the user and one for the computer
 Player user = new Player(1000, 50, userUpgrades());
 Player computer = new Player(1100, 50,computerArray);
+
 ArrayList<Integer> _computerRoundsStaminaIncrease = new ArrayList<Integer>();
 ArrayList<Integer> _UserroundsStaminaIncrease = new ArrayList<Integer>();
 
@@ -65,6 +68,7 @@ ArrayList<Integer> _UserroundsStaminaIncrease = new ArrayList<Integer>();
 
 
 
+//the program only runs if both players have more than 0 health
 
  while(userHealth > 0 && computerHealth > 0){
 
@@ -73,6 +77,10 @@ System.out.println("your stamina is "+userStamina);
 
 System.out.println("type the move you want to do 1 - 5 ");
 int userInput = myObj.nextInt();  
+
+
+//these if staements are what call the methods 
+
 
 if(userInput == 0 && playerChosen == 1){
 user.rasengan(enviroment, roundPlayed);
